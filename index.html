@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Organiza tus medicamentos, registra tus tomas y guarda tus citas médicas.">
+  <title>Mi Salud al Día</title>
+  <link rel="stylesheet" href="css/styles.min.css">
+<script src="js/app.min.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a class="brand" href="#inicio">Mi Salud al Día</a>
+      <nav aria-label="Navegación principal">
+        <a href="#medicamentos">Medicamentos</a>
+        <a href="#tomas">Tomas de hoy</a>
+        <a href="#citas">Citas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="inicio">
+    <section class="hero" aria-labelledby="titulo">
+      <p class="eyebrow">Tu bienestar, organizado</p>
+      <h1 id="titulo">Un espacio para cuidar tu rutina</h1>
+      <p>Organiza tus medicamentos y citas en un solo lugar.</p>
+      <p class="notice">
+        Registra las indicaciones de tu profesional de salud.
+        Esta aplicación no recomienda tratamientos ni modifica dosis.
+      </p>
+    </section>
+
+    <p id="mensaje" role="status" aria-live="polite"></p>
+
+    <section class="summary" aria-label="Resumen">
+      <article class="summary-card">
+        <h2>Medicamentos</h2>
+        <p id="total-medicamentos">0</p>
+      </article>
+      <article class="summary-card">
+        <h2>Tomas registradas hoy</h2>
+        <p id="total-tomas">0</p>
+      </article>
+      <article class="summary-card">
+        <h2>Próximas citas</h2>
+        <p id="total-citas">0</p>
+      </article>
+    </section>
+
+    <section class="panel" id="medicamentos"
+             aria-labelledby="titulo-medicamentos">
+      <h2 id="titulo-medicamentos">Mis medicamentos</h2>
+      <p>Agrega un medicamento con un horario diario.</p>
+
+      <form id="form-medicamento" class="form-grid">
+        <div class="field">
+          <label for="nombre-medicamento">Nombre del medicamento</label>
+          <input id="nombre-medicamento" name="nombre" type="text"
+                 maxlength="100" placeholder="Nombre indicado en tu receta"
+                 required>
+        </div>
+
+        <div class="field">
+          <label for="dosis-medicamento">Dosis indicada</label>
+          <input id="dosis-medicamento" name="dosis" type="text"
+                 maxlength="100" placeholder="Tal como aparece en tu receta"
+                 required>
+        </div>
+
+        <div class="field">
+          <label for="hora-medicamento">Horario diario</label>
+          <input id="hora-medicamento" name="hora" type="time" required>
+        </div>
+
+        <div class="field">
+          <label for="notas-medicamento">Notas (opcional)</label>
+          <input id="notas-medicamento" name="notas" type="text"
+                 maxlength="250" placeholder="Indicaciones adicionales">
+        </div>
+
+        <button class="btn-primary" type="submit">
+          Agregar medicamento
+        </button>
+      </form>
+
+      <ul id="lista-medicamentos" class="item-list">
+        <li class="empty-state">Todavía no has registrado medicamentos.</li>
+      </ul>
+    </section>
+
+    <section class="panel" id="tomas" aria-labelledby="titulo-tomas">
+      <h2 id="titulo-tomas">Tomas de hoy</h2>
+      <p id="fecha-hoy"></p>
+      <p>Marca una toma únicamente después de haberla realizado.</p>
+
+      <ul id="lista-tomas" class="item-list">
+        <li class="empty-state">
+          Agrega un medicamento para ver su horario aquí.
+        </li>
+      </ul>
+    </section>
+
+    <section class="panel" id="citas" aria-labelledby="titulo-citas">
+      <h2 id="titulo-citas">Mis citas médicas</h2>
+
+      <form id="form-cita" class="form-grid">
+        <div class="field">
+          <label for="especialidad-cita">Especialidad o motivo</label>
+          <input id="especialidad-cita" name="especialidad" type="text"
+                 maxlength="100" placeholder="Por ejemplo: consulta general"
+                 required>
+        </div>
+
+        <div class="field">
+          <label for="fecha-cita">Fecha y hora</label>
+          <input id="fecha-cita" name="fecha" type="datetime-local" required>
+        </div>
+
+        <div class="field">
+          <label for="lugar-cita">Lugar (opcional)</label>
+          <input id="lugar-cita" name="lugar" type="text"
+                 maxlength="150" placeholder="Consultorio o clínica">
+        </div>
+
+        <div class="field">
+          <label for="preguntas-cita">Preguntas para la consulta (opcional)</label>
+          <textarea id="preguntas-cita" name="preguntas" rows="3"
+                    maxlength="1000"
+                    placeholder="¿Qué quieres consultar?"></textarea>
+        </div>
+
+        <button class="btn-primary" type="submit">Guardar cita</button>
+      </form>
+
+      <ul id="lista-citas" class="item-list">
+        <li class="empty-state">Todavía no has registrado citas.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Mi Salud al Día · Proyecto académico</p>
+      <p>
+        Los datos se guardarán en este navegador.
+        Para la demostración, utiliza información ficticia.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
