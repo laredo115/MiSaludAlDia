@@ -92,3 +92,39 @@ Esta versión no incluye notificaciones ni cuentas de usuario.
 - Empaquetado de la versión para distribución.
 - Publicación del repositorio en GitHub o GitLab.
 - Configuración y comprobación del despliegue con Apache.
+## Despliegue local con Apache
+
+La aplicación se sirve mediante Apache de XAMPP en el puerto 80.
+
+- URL: http://localhost/misalud/
+- Directorio del proyecto: C:/Users/crimi/Documents/Proyectos/MiSaludAlDia
+- Configuración: C:/xampp/apache/conf/extra/httpd-vhosts.conf
+
+Se configuró un VirtualHost para localhost y un Alias /misalud
+que apunta al directorio del proyecto. DirectoryIndex establece
+index.html como página inicial y Require local limita el acceso
+al equipo local.
+
+La configuración se comprobó con:
+
+```powershell
+& C:\xampp\apache\bin\httpd.exe -t
+& C:\xampp\apache\bin\httpd.exe -S
+```
+
+La comprobación de sintaxis devolvió Syntax OK y la aplicación
+se abrió correctamente desde http://localhost/misalud/.
+
+## Empaquetado
+
+El paquete MiSaludAlDia-v1.0.0.zip contiene:
+
+- index.html
+- css/styles.min.css
+- js/app.min.js
+
+Su tamaño es de 5,628 bytes. Se creó con Compress-Archive
+y se verificó extrayéndolo con Expand-Archive.
+
+Para utilizarlo, extraer el ZIP en el directorio elegido
+y configurar Apache para servir ese directorio.
