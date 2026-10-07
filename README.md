@@ -128,3 +128,15 @@ y se verificó extrayéndolo con Expand-Archive.
 
 Para utilizarlo, extraer el ZIP en el directorio elegido
 y configurar Apache para servir ese directorio.
+
+## Optimización de imágenes
+
+Se creó una versión de la imagen de la agenda de salud
+mediante el cambio de tamaño y guardado en formato JPEG con Paint.
+
+- Original: img/salud-original.jpg — 122,449 bytes.
+- Optimizada: img/salud.jpg — 118,523 bytes.
+- Reducción: 3,926 bytes, aproximadamente 3.2 %.
+
+La página y el ZIP utilizan la versión optimizada.
+El original se conserva en el proyecto para comparar.
