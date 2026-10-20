@@ -32,4 +32,14 @@
         @yield('contenido')
     </main>
 </body>
+
+<footer class="contenedor">
+    <nav aria-label="Información legal">
+        <a href="{{ route('privacidad') }}">Aviso de privacidad</a>
+        ·
+        <a href="{{ route('terminos') }}">Términos de uso</a>
+    </nav>
+    <p>Mi Salud al Día · Prototipo académico.</p>
+</footer>
+
 </html>

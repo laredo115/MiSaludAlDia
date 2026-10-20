@@ -10,6 +10,11 @@ Route::get('/', function () {
     return redirect()->route(Auth::check() ? 'panel' : 'login');
 });
 
+Route::view('/privacidad', 'legal.privacidad')
+    ->name('privacidad');
+
+Route::view('/terminos', 'legal.terminos')
+    ->name('terminos');
 Route::middleware('auth')->group(function () {
     Route::view('/panel', 'panel')->name('panel');
 
